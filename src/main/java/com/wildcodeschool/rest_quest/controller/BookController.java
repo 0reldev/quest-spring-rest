@@ -20,7 +20,7 @@ public class BookController {
     }
 
     @GetMapping("/books/{id}")
-    public Book show(@PathVariable Long id){
+    public Book show(@PathVariable Long id) {
 
         return bookRepository.findById(id).get();
     }
@@ -30,8 +30,9 @@ public class BookController {
         return bookRepository.save(book);
     }
 
-    @PutMapping("/books")
-    public Book update(@PathVariable Long id, @RequestBody Book book){
+    @PutMapping("/books/{id}")
+    public Book update(@PathVariable Long id, @RequestBody Book book) {
+
         Book bookToUpdate = bookRepository.findById(id).get();
         bookToUpdate.setTitle(book.getTitle());
         bookToUpdate.setAuthor(book.getAuthor());
@@ -40,7 +41,8 @@ public class BookController {
     }
 
     @DeleteMapping("books/{id}")
-    public boolean delete(@PathVariable Long id){
+    public boolean delete(@PathVariable Long id) {
+
         bookRepository.deleteById(id);
         return true;
     }

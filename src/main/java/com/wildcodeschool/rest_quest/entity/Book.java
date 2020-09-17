@@ -1,7 +1,5 @@
 package com.wildcodeschool.rest_quest.entity;
 
-import org.springframework.context.annotation.Primary;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,7 +13,9 @@ public class Book {
     private Long id;
 
     private String title;
+
     private String author;
+
     private String description;
 
     public Book() { };
